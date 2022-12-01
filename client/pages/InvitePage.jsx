@@ -3,24 +3,24 @@ import { useEffect, useState } from 'react'
 //import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 
-//import { getInviteApi } from '../apiClient/invite.js'
+import { getInviteApi } from '../apiClient/invite.js'
 
 export default function InviteForm(props) {
   const [newGuest, setNewGuest] = useState({
     name: '',
     guest_code: '',
   })
-  // useEffect(() => {
-  //   getInviteApi()
-  //     .then((guest) => {
-  //       setNewGuest(guest)
-  //     })
-  //     .catch((err) => {
-  //       err.message
-  //     })
-  // })
+  useEffect(() => {
+    getInviteApi()
+      .then((guest) => {
+        setNewGuest(guest)
+      })
+      .catch((err) => {
+        err.message
+      })
+  })
   function handleChange(event) {
-    setNewGuest(event.target)
+    setNewGuest(event.target.value)
   }
 
   function handleSubmit(event) {
@@ -28,6 +28,7 @@ export default function InviteForm(props) {
     props.onAddGuest(newGuest)
     const guest_code = uuidv4()
     setNewGuest('')
+    console.log(newGuest)
   }
 
   return (
@@ -39,7 +40,7 @@ export default function InviteForm(props) {
           type='text'
           name='new-guest'
           id='new-guest'
-          value={newGuest}
+          value={newGuest.name}
           onChange={handleChange}
         ></input>
 
