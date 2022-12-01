@@ -1,45 +1,51 @@
 // ROUTE example for this page: http://localhost:5173/invite/0d05db6b-d332-4ebc-ab28-aedf056706fc
-
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 
-import { createInvite } from '../apiClient/invite.js'
+//import { getInviteApi } from '../apiClient/invite.js'
 
-export default function Invite() {
-  const [newInvite, setNewInvite] = useState({
+export default function InviteForm(props) {
+  const [newGuest, setNewGuest] = useState({
     name: '',
     guest_code: '',
   })
-
   // useEffect(() => {
   //   getInviteApi()
-  //     .then((invite) => {
-  //       setNewInvite(invite)
+  //     .then((guest) => {
+  //       setNewGuest(guest)
   //     })
   //     .catch((err) => {
   //       err.message
   //     })
   // })
-
   function handleChange(event) {
-    const { name } = event.target
+    setNewGuest(event.target)
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  function handleSubmit(event) {
+    event.preventDefault()
+    props.onAddGuest(newGuest)
     const guest_code = uuidv4()
-    setNewInvite({ name: e.target.name })
-    console.log('name', e.target.name, e.target.id)
+    setNewGuest('')
   }
 
   return (
-    <>
-      <div>Invite Page</div>
-      <input type='text' id='name'></input>
-      {/* <input type='text' id='budget'></input> */}
-      <button onSubmit={handleSubmit}>ACCEPT</button>
-    </>
+    <div>
+      <h1>Invite Page</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor='new-guest'>What is your name?</label>
+        <input
+          type='text'
+          name='new-guest'
+          id='new-guest'
+          value={newGuest}
+          onChange={handleChange}
+        ></input>
+
+        <button type='submit'>ACCEPT</button>
+      </form>
+    </div>
   )
 }
 
