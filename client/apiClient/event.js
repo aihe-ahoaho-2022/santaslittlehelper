@@ -8,6 +8,7 @@ export const createEvent = async (event) => {
 }
 
 export const getEvent = async (event_id) => {
+  console.log(event_id)
   const response = await request.get(`${baseUrl}/event/dashboard/${event_id}`)
   const event = await response.json()
   return event[0]

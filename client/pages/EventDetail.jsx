@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+import { getEvent } from '../apiClient/event'
 import {
   deleteGuest,
   getAllParticipants,
@@ -32,8 +33,15 @@ const EventDetail = () => {
     fetchParticipants()
   }, [assigned])
 
+  // useEffect(() => {
+  //   console.log('assigned is: ', assigned)
+  // }, [assigned])
   useEffect(() => {
-    console.log('assigned is: ', assigned)
+    // console.log('assigned is: ', assigned)
+    getEvent(event_id).then((event) => {
+      console.log(event)
+      setAssigned(event.status)
+    })
   }, [assigned])
 
   function handleDraw(event) {
