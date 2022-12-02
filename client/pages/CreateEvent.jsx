@@ -41,7 +41,7 @@ const Event = () => {
       {!eventCreated ? (
         <>
           <div className='create-event'>
-            <h1>Create a New Event</h1>
+            <h2>Create a New Event</h2>
           </div>
           <div className='event-container'>
             <form onSubmit={handleSubmit}>
