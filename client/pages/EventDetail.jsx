@@ -54,8 +54,6 @@ const EventDetail = () => {
       console.log(assignment)
       updateWishlistGifterApi(assignment)
     })
-
-    // updateStatus(event_id)
     return updateEventStatus(event_id).then((event) => {
       console.log('new:', event)
       setAssigned(true)
@@ -131,7 +129,6 @@ const EventDetail = () => {
           })}
           <div>
             <button onClick={handleDraw}>Draw</button>
-            {/* update status to true when clicked */}
           </div>
         </div>
       )}
