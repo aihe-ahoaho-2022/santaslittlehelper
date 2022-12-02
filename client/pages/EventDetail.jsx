@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import {
   deleteGuest,
   getAllParticipants,
-  // updateStatus,
+  updateEventStatus,
   updateWishlistGifterApi,
 } from '../apiClient/event.js'
 
@@ -43,6 +43,10 @@ const EventDetail = () => {
     fetchParticipants()
   }, [assigned])
 
+  useEffect(() => {
+    console.log('assigned is: ', assigned)
+  }, [assigned])
+
   function handleDraw(event) {
     event.preventDefault()
     const assignments = assign(guestList)
@@ -52,7 +56,10 @@ const EventDetail = () => {
     })
 
     // updateStatus(event_id)
-    setAssigned(true)
+    return updateEventStatus(event_id).then((event) => {
+      console.log('new:', event)
+      setAssigned(true)
+    })
   }
 
   const shuffle = (array) => {
@@ -124,6 +131,7 @@ const EventDetail = () => {
           })}
           <div>
             <button onClick={handleDraw}>Draw</button>
+            {/* update status to true when clicked */}
           </div>
         </div>
       )}

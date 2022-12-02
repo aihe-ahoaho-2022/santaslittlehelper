@@ -46,3 +46,13 @@ export const updateWishlistGifterApi = async (assignment) => {
     .send(assignment)
   return res.body
 }
+
+export function updateEventStatus(event_id) {
+  console.log('API:', event_id)
+  return request
+    .patch(`${baseUrl}/event/dashboard/${event_id}`)
+    .send()
+    .then((res) => {
+      return res.body
+    })
+}

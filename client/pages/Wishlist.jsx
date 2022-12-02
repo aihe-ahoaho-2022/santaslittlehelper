@@ -16,7 +16,7 @@ export default function AddWishlist() {
   }
   const partner = 'Mickey Mouse in da House'
   const partnerWishlist = 'cheese and more cheese'
-  const completed = true
+  const completed = false // put a function here to change when draw has happened
 
   console.log(newWish, 'newWish in AddWishlist with guest_code')
 
