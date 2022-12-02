@@ -20,7 +20,7 @@ const Event = () => {
     const host_id = 69
 
     const event = { name, date, budget, invite_code, host_id }
-    console.log(event, 'EVENT')
+
     const newEvent = await createEvent(event)
     setEventCreated(true)
   }

@@ -34,7 +34,11 @@ export function updatedWishlistApi(id, newWish) {
 
 export function deleteWishlistApi(id) {
   return request.delete(`${wishlistURL}/${id}`).then((res) => {
-    console.log(res.body)
     return res.body
   })
+}
+
+export const createGuestApi = async (newGuest) => {
+  const res = await request.post('/api/v1/wishlist', newGuest)
+  return res.body
 }

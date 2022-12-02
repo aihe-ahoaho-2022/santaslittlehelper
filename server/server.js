@@ -3,6 +3,7 @@ import 'dotenv/config'
 import express from 'express'
 import path from 'path'
 
+import drinksRoute from './routes/drinks.js'
 import eventRoute from './routes/event.js'
 import guestRoute from './routes/guest.js'
 import inviteRoute from './routes/invite.js'
@@ -13,14 +14,15 @@ server.use(express.urlencoded({ extended: true }))
 server.use(express.json())
 
 // api-routes go here
+
 server.get('/api/hello-world', (req, res) => {
   res.json({ message: 'Hello World' })
 })
 
+server.use('/api/v1/drinks', drinksRoute)
 server.use('/api/v1/event', eventRoute)
 server.use('/api/v1/wishlist', guestRoute)
 server.use('/api/v1/invite', inviteRoute)
-
 // example:
 // server.use('/api/dracula', draculaRoutes)
 server.use('/api/*', (req, res) => {

@@ -1,7 +1,6 @@
 import connection from '../connection.js'
 
 export function createEvent(event, db = connection) {
-  console.log('hit create event', event)
   const { host_id, invite_code, name, budget, date } = event
 
   return db('event').insert({
@@ -22,5 +21,10 @@ export function getEvent(event_id, db = connection) {
 }
 
 export function updateStatus(event_id, db = connection) {
-  return db('event').where('event_id', event_id).update({ status: true })
+  console.log(event_id, 'event id in database')
+  return db('event').where('invite_code', event_id).update({ status: true })
+}
+
+export function getEventByInviteCode(invite_code, db = connection) {
+  return db('event').where('invite_code', invite_code).first()
 }

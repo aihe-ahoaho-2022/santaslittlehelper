@@ -5,7 +5,6 @@ import { getEvents } from '../apiClient/event.js'
 
 const Dashboard = () => {
   const [events, setEvents] = useState([])
-  console.log(events)
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -17,7 +16,7 @@ const Dashboard = () => {
 
   // todo: hostId should be auth0_id but setup after.
   const filterEvents = (events) => {
-    return events.filter((event) => event.host_id === 1)
+    return events.filter((event) => event.host_id === 69)
   }
 
   return (
@@ -33,7 +32,7 @@ const Dashboard = () => {
               {event.status === 0 ? 'Submissions Open' : 'Submissions Closed'}
             </p>
             {/* <Link to={`/dashboard/${event.event_id}`}>View Event</Link> */}
-            <Link to={`/dashboard/${event.event_id}`}>View Event</Link>
+            <Link to={`/dashboard/${event.invite_code}`}>View Event</Link>
           </div>
         ))}
       </div>

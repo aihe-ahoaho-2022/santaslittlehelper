@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
 
 //id is 'guest_code' in the 'wishlist' db table
 router.get('/:id', (req, res) => {
-  console.log('hit get by id')
   const id = req.params.id
   db.getWishlistById(id)
     .then(() => {
@@ -30,7 +29,7 @@ router.get('/:id', (req, res) => {
       res.json(result)
     })
     .catch((err) => {
-      console.log(err)
+      console.err(err)
       res.sendStatus(500)
     })
 })
@@ -48,10 +47,9 @@ router.post('/', (req, res) => {
 })
 
 router.patch('/:id', (req, res) => {
-  console.log('hit patch in wishlist')
   const id = req.params.id
   const wish = req.body
-  console.log(id, wish, 'id and wish')
+
   db.updatedWishlist(id, wish)
     .then(() => {
       return db.getWishlistById(id)
@@ -68,10 +66,8 @@ router.patch('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  console.log('hit put in wishlist')
   const { gifter_id, guest_code, id } = req.body
-  // const wish = req.body
-  console.log(gifter_id, guest_code, id, 'gifter_id, guest_code, id')
+
   db.updateWishlistGifter(gifter_id, guest_code, id)
     .then(() => {
       return db.getWishlistById(id)
@@ -104,6 +100,6 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-// Create a function here and in db to filter the guests down - don't want on front end for security concerns
+// todo: Create a function here and in db to filter the guests down - don't want on front end for security concerns
 
 export default router

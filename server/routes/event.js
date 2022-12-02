@@ -22,7 +22,6 @@ router.get('/dashboard/:event_id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  console.log('hit post')
   try {
     const newEvent = await createEvent(req.body)
     res.status(200).json(newEvent)
