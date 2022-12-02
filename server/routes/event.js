@@ -1,5 +1,4 @@
 // PARTICIPANTS PAGE//
-
 import express from 'express'
 const router = express.Router()
 import { createEvent, getEvent, getEvents } from '../db/functions/events.js'

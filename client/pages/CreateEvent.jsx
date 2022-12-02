@@ -1,3 +1,10 @@
+import {
+  MantineProvider,
+  MultiSelect,
+  NumberInput,
+  TextInput,
+} from '@mantine/core'
+import { Calendar } from '@mantine/dates'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
@@ -5,11 +12,11 @@ import { v4 as uuidv4 } from 'uuid'
 import { createEvent } from '../apiClient/event.js'
 
 const Event = () => {
-  const [name, setName] = useState('')
-  const [date, setDate] = useState('')
-  const [budget, setBudget] = useState('')
+  const [date, setDate] = useState(null)
   const [eventCreated, setEventCreated] = useState(false)
   const [link, setLink] = useState(null)
+  const [budget, setBudget] = useState('')
+  const [name, setName] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -30,38 +37,67 @@ const Event = () => {
   }
 
   return (
-    <div className='event'>
+    <div>
       {!eventCreated ? (
-        <div className='create-event'>
-          <h2>Create a New Event</h2>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor='name'>Event Name:</label>
-            <input
-              type='text'
-              required
-              value={name}
-              name='name'
-              onChange={(e) => setName(e.target.value)}
-            />
-            <label htmlFor='date'>Event Date:</label>
-            <input
-              type='date'
-              name='date'
-              required
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-            <label htmlFor='budget'>Event Budget:</label>
-            <input
-              type='number'
-              name='budget'
-              required
-              value={budget}
-              onChange={(e) => setBudget(e.target.value)}
-            />
-            <button>Create Event</button>
-          </form>
-        </div>
+        <>
+          <div className='create-event'>
+            <h1>Create a New Event</h1>
+          </div>
+          <div className='event-container'>
+            <form onSubmit={handleSubmit}>
+              <div className='calender'>
+                <Calendar
+                  name='date'
+                  required
+                  value={date}
+                  onChange={(e) => setDate(e)}
+                />
+              </div>
+              <div className='inputBoxes'>
+                <MantineProvider
+                  theme={{
+                    components: {
+                      InputWrapper: {
+                        defaultProps: {
+                          inputWrapperOrder: [
+                            'label',
+                            'error',
+                            'input',
+                            'description',
+                          ],
+                        },
+                      },
+
+                      Input: {
+                        defaultProps: {
+                          variant: 'filled',
+                        },
+                      },
+                    },
+                  }}
+                >
+                  <TextInput
+                    label='Event Name'
+                    placeholder='ex: super special birthday party'
+                    description='create your event name above.'
+                    value={name}
+                    name='name'
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                  <NumberInput
+                    mt='xl'
+                    label='Gift Budget'
+                    placeholder='ex: 30'
+                    description='enter gift budget above.'
+                    value={budget}
+                    onChange={(e) => setBudget(e)}
+                  />
+                </MantineProvider>
+                <button>Create Event</button>
+              </div>
+            </form>
+          </div>
+        </>
       ) : (
         <div className='event-created'>
           <h2>Event Created</h2>
