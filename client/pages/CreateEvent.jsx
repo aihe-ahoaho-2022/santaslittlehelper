@@ -45,14 +45,7 @@ const Event = () => {
           </div>
           <div className='event-container'>
             <form onSubmit={handleSubmit}>
-              <div className='calender'>
-                <Calendar
-                  name='date'
-                  required
-                  value={date}
-                  onChange={(e) => setDate(e)}
-                />
-              </div>
+              <div className='calender'></div>
               <div className='inputBoxes'>
                 <MantineProvider
                   theme={{
@@ -92,6 +85,12 @@ const Event = () => {
                     value={budget}
                     onChange={(e) => setBudget(e)}
                   />
+                  <Calendar
+                    name='date'
+                    required
+                    value={date}
+                    onChange={(e) => setDate(e)}
+                  />
                 </MantineProvider>
                 <button>Create Event</button>
               </div>
@@ -105,7 +104,9 @@ const Event = () => {
           <a href={`http://localhost:5173/invite/${link}`}>
             http://elf.co/secret-santa/{link}
           </a>
-          <button onClick={copyLink}>Copy Link</button>
+          <button className='create-event-button' onClick={copyLink}>
+            Copy Link
+          </button>
           <Link to='/dashboard'>Go to Dashboard</Link>
         </div>
       )}
