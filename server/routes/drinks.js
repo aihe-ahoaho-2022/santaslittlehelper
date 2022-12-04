@@ -8,11 +8,9 @@ router.get('/', (req, res) => {
   request
     .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     .then((data) => {
-      console.log(data.body)
       res.json(data.body)
     })
-    .catch((err) => {
-      console.error(err)
+    .catch(() => {
       res.sendStatus(500)
     })
 })

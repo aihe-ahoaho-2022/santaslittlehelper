@@ -1,0 +1,9 @@
+@use '../styles/theme';
+
+
+.loadingContainer {
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}

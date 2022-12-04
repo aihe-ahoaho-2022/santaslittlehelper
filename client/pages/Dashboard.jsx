@@ -32,10 +32,11 @@ const Dashboard = () => {
               {event.status === 0 ? 'Submissions Open' : 'Submissions Closed'}
             </p>
             {/* <Link to={`/dashboard/${event.event_id}`}>View Event</Link> */}
-            <Link to={`/dashboard/${event.invite_code}`}>View Event</Link>
+            <Link to={`/dashboard/${event.invite_id}`}>View Event</Link>
           </div>
         ))}
       </div>
+      <Link to='/'>Go Home</Link>
     </div>
   )
 }

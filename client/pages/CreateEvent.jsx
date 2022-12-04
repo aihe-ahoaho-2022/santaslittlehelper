@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid'
 
 import { createEvent } from '../apiClient/event.js'
 
@@ -13,20 +12,19 @@ const Event = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const invite_code = uuidv4()
-
-    setLink(invite_code)
 
     const host_id = 69
 
-    const event = { name, date, budget, invite_code, host_id }
+    const event = { name, date, budget, host_id }
 
     const newEvent = await createEvent(event)
+
+    setLink(newEvent.invite_id)
     setEventCreated(true)
   }
 
   const copyLink = () => {
-    navigator.clipboard.writeText(`http://elf.co/secret-santa/${link}`)
+    navigator.clipboard.writeText(`localhost:5173/invite/${link}`)
   }
 
   return (

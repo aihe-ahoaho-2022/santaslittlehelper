@@ -1,0 +1,11 @@
+@use './theme';
+
+html,
+body {
+  font-family: theme.$font-body; color: theme.$text-black;
+  background-color: theme.$white; margin: 0px;
+}
+
+p { margin: 0px; }
+
+a { text-decoration: none; color: theme.$text-black; cursor: pointer; }

@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid'
 
 import { getEventByInviteCode } from '../apiClient/event'
 import { createGuestApi } from '../apiClient/guest'
 
 export default function InvitePage() {
-  const initialState = { name: '', guest_code: '', event_id: '' }
+  const initialState = { name: '', guest_code: '', invite_id: '' }
   const [event, setNewEvent] = useState(initialState)
   const [guestName, setGuestName] = useState('')
-  const { invite_code } = useParams()
+  const { invite_id } = useParams()
   const navigate = useNavigate()
 
   useEffect(() => {
-    getEventByInviteCode(invite_code)
+    getEventByInviteCode(invite_id)
       .then((event) => {
         setNewEvent(event)
       })
@@ -23,32 +22,28 @@ export default function InvitePage() {
       })
   }, [])
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const guest_code = uuidv4()
 
     const newGuest = {
-      guest_code: guest_code,
       name: guestName,
-      event_id: invite_code,
+      event_id: invite_id,
     }
 
-    createGuestApi(newGuest)
-      .then(() => {
-        // setGuestCode(guest_code)
-        navigate(`/wishlist/${guest_code}`)
-      })
-      .catch((err) => {
-        err.message
-      })
+    try {
+      const guest = await createGuestApi(newGuest)
+      navigate(`/wishlist/${guest.guest_code}`)
+    } catch (err) {
+      err.message
+    }
   }
 
   return (
     <>
       <h1>InvitePage</h1>
-      <h2>{event.event_name}</h2>
-      <h3>{event.date}</h3>
-      <h3>Budget: ${event.budget}</h3>
+      <h2>{event?.event_name}</h2>
+      <h3>{event?.date}</h3>
+      <h3>Budget: ${event?.budget}</h3>
       <form className='form' onSubmit={handleSubmit}>
         <label htmlFor='name'>Name: </label>
         <input

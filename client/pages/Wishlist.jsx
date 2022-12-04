@@ -19,7 +19,7 @@ export default function AddWishlist() {
   useEffect(() => {
     getWishlistByIdApi(guest_code)
       .then((wishlist) => {
-        setNewWish(...wishlist)
+        setNewWish(wishlist)
       })
       .catch((err) => {
         err.message

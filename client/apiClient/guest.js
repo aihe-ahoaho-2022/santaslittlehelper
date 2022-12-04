@@ -20,6 +20,7 @@ export function createWishlistApi(wish) {
     .then((res) => {
       return res.body
     })
+
     .catch(console.error)
 }
 
@@ -40,5 +41,6 @@ export function deleteWishlistApi(id) {
 
 export const createGuestApi = async (newGuest) => {
   const res = await request.post('/api/v1/wishlist', newGuest)
-  return res.body
+
+  return res.body[0]
 }
