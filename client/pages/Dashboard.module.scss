@@ -1,6 +1,7 @@
 @use '../styles/_theme' as theme;
 
 .dashboard {
+  min-height: 60vh;
   text-align: center;
   font-family: theme.$body-font-family;
 
@@ -45,14 +46,6 @@
     border-color: theme.$bodyGold;
     border-style: solid;
     font-size: 20px;
-    
-    a {
-      text-decoration: none;
-      color: theme.$white;
-    }
-    a:hover {
-      color: rgb(71, 71, 71);
-    }
   }
   button:hover {
     color: theme.$black;
@@ -60,7 +53,11 @@
     border-color: theme.$bodyGold;
     border-width: 4px;
     border-style: solid;
+    text-decoration: none;
     
+  }
+  p {
+    font-size: 20px;
   }
 }
 .event {
@@ -74,6 +71,7 @@
 
 .title {
   color: theme.$bodyRed;
+  font-size: 30px !important;
 }
 
 .statusClosed {
@@ -87,8 +85,8 @@
 
 .treeImage {
   position: relative;
-  right: 30px;
-  bottom: -20px;
-  rotate:calc(350deg);
+  right: 25px;
+  bottom: -25px;
+  rotate:calc(15deg);
   }
    

@@ -16,7 +16,6 @@ const Dashboard = () => {
   }, [])
 
   const MOCK_AUTHID = 69
-  console.log(events)
 
   // todo: hostId should be auth0_id but setup after.
   const filterEvents = (events) => {
@@ -31,7 +30,9 @@ const Dashboard = () => {
       <div className={styles.events}>
         {filterEvents(events).map((event) => (
           <div className={styles.event} key={event.id}>
-            <h2 className={styles.title}>{event.event_name}</h2>
+            <a href={`/dashboard/${event.invite_id}`}>
+              <h2 className={styles.title}>{event.event_name}</h2>
+            </a>
             <p>
               {' '}
               Event Date: {event.date} | Guest{' '}
