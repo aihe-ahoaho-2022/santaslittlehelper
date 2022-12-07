@@ -3,6 +3,9 @@
 .app {
   height: 100vh;
 
+  
+  
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,7 +15,8 @@
   }
 
   .mainApp {
-    max-width: 130rem;
+    // max-width: 130rem;
+    width: 1200px;
     margin: 0 auto;
 
     display: flex;

@@ -40,7 +40,7 @@ const Event = () => {
       <h1 className={styles.header}>Secret Santa</h1>
       {!eventCreated ? (
         <div className={styles.createEventContainer}>
-          <h2 className={styles.secondaryHeading}>Create your Event</h2>
+          <h2 className={styles.secondaryHeading}>Create your event</h2>
           <form className={styles.eventForm} onSubmit={handleSubmit}>
             <label htmlFor='name'>Event Name:</label>
             <input
@@ -60,7 +60,7 @@ const Event = () => {
               required
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
-              placeholder='Event Budget'
+              placeholder='$'
             />
             <label htmlFor='date'>Draw Date:</label>
             <input
@@ -72,7 +72,7 @@ const Event = () => {
               onChange={(e) => setDate(e.target.value)}
               placeholder='Draw Date'
             />
-            <button>Create Your Event</button>
+            <button>Create your event</button>
           </form>
           <img
             src='/server/public/assets/santa-small.PNG'

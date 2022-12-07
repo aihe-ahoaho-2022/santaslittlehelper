@@ -10,12 +10,23 @@
   padding: 5rem;
 
   height: 50rem;
-  width: 90rem;
+  width: 90rem; //TODO: changed from 90 rem 
+
+  
+
+
+
   margin: 0 auto;
 
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: $shadow;
+
+  @media ( max-width: 1200px){
+    
+      background-color: lawngreen;
+    
+  }
 
   .header {
     color: $bodyRed;
@@ -48,7 +59,7 @@
     .secondaryHeading {
       color: $black;
       font-family: $heading-font-family;
-      font-size: 3.2rem;
+      font-size: 3.0rem;
       font-weight: 900;
       text-align: center;
       width: 100%;
@@ -64,7 +75,7 @@
       height: 20rem;
 
       label {
-        font-size: 1.6rem;
+        font-size: 2.8rem;
 
         color: $headerTertiary;
         font-family: $body-font-family;
@@ -73,13 +84,14 @@
         background-color: $headerTertiary;
         border-radius: 10px;
         color: $text-white;
-        font-size: 1.6rem;
-        height: 2.6rem;
+        font-size: 1.8rem;
+        height: 3.6rem;
         font-family: $body-font-family;
         border: none;
 
         &::placeholder {
-          color: $text-white;
+            color: #f7f7f78f;
+          }
         }
         &:focus {
           outline: $text-white;
@@ -90,8 +102,8 @@
         background-color: $headerTertiary;
         border-radius: 10px;
         color: $text-white;
-        font-size: 1.4rem;
-        padding: 1rem;
+        font-size: 1.8rem;
+        padding: 1.5rem;
 
         grid-column: 1 / -1;
         justify-self: center;
@@ -248,4 +260,3 @@
     left: -5rem;
     transform: rotate(-10deg);
   }
-}

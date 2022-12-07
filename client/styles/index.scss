@@ -31,32 +31,39 @@ a {
   color: $text-black;
   cursor: pointer;
 }
-
+// 1344px
 @media (max-width: 84em) {
   html {
+    
   }
 }
-
+// 1200px
 @media (max-width: 75em) {
   html {
     font-size: 56.25%;
   }
 }
-
+// 944px
 @media (max-width: 59em) {
   html {
     font-size: 50%;
   }
 }
-
+// 704px
 @media (max-width: 44em) {
   html {
     font-size: 43.75%;
   }
 }
-
+//544px 
 @media (max-width: 34em) {
   html {
     font-size: 37.5%;
   }
 }
+
+/* FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+-SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
