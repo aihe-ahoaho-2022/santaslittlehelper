@@ -1,6 +1,12 @@
 import '@testing-library/jest-dom'
 
-import { fireEvent, render, screen, within } from '@testing-library/react'
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { vi } from 'vitest'
@@ -33,34 +39,28 @@ afterEach(() => {
 })
 
 describe('<Drinks />', () => {
-  it.skip('Displays an image, drink name, ingredients, measures, instructions, category and glass type', async () => {
+  it('Displays an image, drink name, ingredients, measures, instructions, category and glass type', async () => {
     getRandomDrink.mockReturnValue(Promise.resolve(randomDrinkResponse))
     render(<Drinks />, { wrapper: MemoryRouter })
+    waitFor(() => getRandomDrink.mock.calls.length > 0).then(async () => {
+      const list = await screen.findByRole('list', { name: /ingredients/i })
+      within(list).getByText(/12 oz whiskey/i)
+      within(list).getByText(/12 oz beer/i)
+      within(list).getByText(/12 oz frozen lemonade/i)
+      within(list).getByText(/1 cup crushed ice/i)
 
-    fireEvent.load(await screen.findByRole('img'))
-
-    await screen.findByText(randomDrinkResponse.strDrink)
-
-    const list = await screen.findByRole('list', { name: /ingredients/i })
-    within(list).getByText(/12 oz whiskey/i)
-    within(list).getByText(/12 oz beer/i)
-    within(list).getByText(/12 oz frozen lemonade/i)
-    within(list).getByText(/1 cup crushed ice/i)
-
-    screen.getByRole('heading', { name: /highball glass/i })
-    screen.getByRole('heading', { name: /ordinary drink/i })
-    screen.getByRole('heading', { name: /instructions/i })
-
-    // screen.logTestingPlaygroundURL()
+      screen.getByRole('heading', { name: /highball glass/i })
+      screen.getByRole('heading', { name: /ordinary drink/i })
+      screen.getByRole('heading', { name: /instructions/i })
+    })
   })
-
-  it.skip('has a link to the home route', async () => {
+  it('has a link to the home route', () => {
     getRandomDrink.mockReturnValue(Promise.resolve(randomDrinkResponse))
     render(<Drinks />, { wrapper: MemoryRouter })
-
-    fireEvent.load(await screen.findByRole('img'))
-
-    const link = screen.getByRole('link')
-    expect(link).toHaveAttribute('href', '/')
+    waitFor(() => getRandomDrink.mock.calls.length > 0).then(async () => {
+      // fireEvent.load(await screen.getAllByRole('img'))
+      const link = await screen.getByRole('link')
+      expect(link).toHaveAttribute('href', '/drinks')
+    })
   })
 })
