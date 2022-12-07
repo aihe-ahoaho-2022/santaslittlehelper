@@ -94,7 +94,11 @@ const Drinks = () => {
         )}
       </div>
       <div className={styles.centerButton}>
-        <Link className={styles.drinksButton} to='/drinks'>
+        <Link
+          onClick='window.location.reload()'
+          className={styles.drinksButton}
+          to='/drinks'
+        >
           randomise drink
         </Link>
 

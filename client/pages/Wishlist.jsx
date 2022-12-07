@@ -67,17 +67,7 @@ export default function Wishlist() {
   }
 
   if (!newWish || !event) {
-    return (
-      <div className={styles.eventContainer}>
-        <h1 className={styles.header}>Secret Santa</h1>
-        <img
-          src='/server/public/assets/Secret-Santa-.png'
-          className={styles.notFound}
-          alt='secret santa not found'
-        />
-        <h2 className={styles.notFoundHeading}>No event found!</h2>
-      </div>
-    )
+    return <></>
   }
 
   const copyLink = () => {
@@ -184,11 +174,13 @@ export default function Wishlist() {
                       </a>
                       <div className={styles.copyLinkContainer}>
                         <p>Save this link to come back to your wishlist</p>
+
                         <img
-                          src='/server/public/assets/Secret-Santa-.png'
+                          src='/server/public/assets/Secret-Santa-small.png'
                           alt='santa hushing'
                           className={styles.santaCopyLinkImg}
                         />
+
                         <button onClick={copyLink}>Copy link</button>
                       </div>
                     </div>
