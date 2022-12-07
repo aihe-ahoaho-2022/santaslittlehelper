@@ -60,5 +60,6 @@ describe('As a user', async () => {
 describe('Add assigned variation of the component test', async () => {
   it.todo('renders', () => {
     render(<Wishlist />, { wrapper: MemoryRouter })
+    expect(screen.getByText(/buddy/i)).toBeInTheDocument()
   })
 })
