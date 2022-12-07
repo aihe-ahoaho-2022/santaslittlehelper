@@ -6,18 +6,20 @@ import styles from './SSHome.module.scss'
 const SSHome = () => {
   return (
     <div className={styles.SSHomeContainer}>
-      <a href='/event'>
+      <div className={styles.SSHomeWrapper}>
         <h1>SECRET SANTA</h1>
-        <img
-          src='../../server/public/assets/Secret-Santa-.png'
-          alt='secret santa'
-          className={styles.image}
-        />
-      </a>
+        <a href='/event'>
+          <img
+            src='../../server/public/assets/Secret-Santa-.png'
+            alt='secret santa'
+            className={styles.image}
+          />
+        </a>
 
-      <Link to='/event' className={styles.links}>
-        LET{"'"}S GET STARTED!
-      </Link>
+        <Link to='/event' className={styles.links}>
+          LET{"'"}S GET STARTED!
+        </Link>
+      </div>
     </div>
   )
 }

@@ -1,15 +1,36 @@
 @use '../styles/_theme' as theme;
 
+
+
 .SSHomeContainer {
+
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   place-content: center;
-  height: 100%;
-  max-width: 150rem;
-  padding: 1rem;
-  gap: 2rem;
+  // max-width: 150rem;
+  // padding: 1rem;
+  height: 60rem;
+  width: auto;
+
+  // gap: 2rem;
+  // height: 100%;
+ 
+  background-color: lawngreen;
+
+  .SSHomeWrapper{
+
+    margin: 2.6rem auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+    width: auto;
+
+    background-color: hotpink;
 
   h1 {
     font-size: 9.6rem;
@@ -21,25 +42,34 @@
   }
   a {
     text-decoration: none;
+    width: 40rem;
+    height: 40rem;
+   
+
+    .image {
+      height: 100%;
+      width: auto;
+      // width: 60rem;
+    
+    
+      transition: transform 0.5s;
+    }
   }
 }
 
-.image {
-  width: 60rem;
 
-  transition: transform 0.5s;
-}
 
 .image:hover {
   transform: scale(1.1);
 }
 
 .links {
-  position: relative;
+  // position: relative;
 
   text-decoration: none;
   font-size: 4.8rem;
   font-family: theme.$body-font-family;
   color: theme.$bodyRed;
   text-align: center;
+}
 }
