@@ -67,7 +67,6 @@ export default function InvitePage() {
             value={guestName}
             name='name'
             onChange={(event) => setGuestName(event.target.value)}
-            // add patten to only allow characters and spaces, not numbers or symbols
             pattern='[A-Za-z ]+'
             required
           />
@@ -82,13 +81,13 @@ export default function InvitePage() {
           </a>
         </div>
         <div className={styles.copyLinkContainer}>
-          <p>Copy and Paste this link to send it to your friends</p>
+          <p>Copy this link to send to your friends</p>
           <img
             src='/server/public/assets/Secret-Santa-.png'
             alt='santa hushing'
             className={styles.santaCopyLinkImg}
           />
-          <button onClick={copyLink}>Copy Link</button>
+          <button onClick={copyLink}>Copy link</button>
         </div>
       </div>
     </>

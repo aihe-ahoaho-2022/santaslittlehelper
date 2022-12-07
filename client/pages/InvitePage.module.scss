@@ -7,7 +7,7 @@
   justify-content: center;
   gap: 2rem;
   background-color: $white;
-  padding: 5rem;
+  padding: 7rem;
 
   width: 80rem;
   margin: 0 auto;
@@ -17,13 +17,13 @@
   box-shadow: $shadow;
 
   h2 {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 
   h3 {
     color: $bodyRed;
     font-family: $heading-font-family;
-    margin-top: -2rem;
+    margin: 0 auto;
     font-size: 3.4rem;
     font-weight: 900;
     text-align: center;
@@ -33,11 +33,11 @@
   p {
     color: $headerTertiary;
     font-family: $body-font-family;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 400;
     text-align: center;
     width: 100%;
-    margin: 2rem auto;
+    margin: 1rem auto;
     max-width: 40ch;
     word-wrap: break-word;
   }
@@ -62,11 +62,15 @@
   .inviteForm {
     display: flex;
     flex-direction: column;
-    height: 8rem;
+    height: 10rem;
+    gap: 2rem;
+    width: 100%;
+    place-items: center;
 
     margin: 0 auto;
 
-    margin-top: 5rem;
+    // margin-top: 5rem;
+    // background-color: hotpink;
 
     label {
       font-size: 1.6rem;
@@ -77,7 +81,7 @@
       background-color: $headerTertiary;
       border-radius: 10px;
       color: $text-white;
-      font-size: 1.6rem;
+      font-size: 3rem;
       padding: 0.8rem;
       text-align: center;
       height: 2.6rem;
@@ -88,23 +92,24 @@
         color: #f7f7f78f;
       }
     }
-
     button {
       background-color: $headerTertiary;
-      border-color: $headerTertiary;
       border-radius: 10px;
       color: $text-white;
-      font-size: 1.4rem;
-      padding: 1rem;
-      width: 15rem;
-      margin: 0 auto;
+      font-size: 1.8rem;
+      padding: 1.5rem;
+      
+  
+      white-space: nowrap;
       margin-top: 4.2rem;
       font-family: $body-font-family;
-      cursor: pointer;
       border: none;
-
+      margin : 0 auto;
+  
       &:hover {
+        cursor: pointer;
         background-color: $lighterMainGreen;
+        border: 1px solid $headerTertiary;
       }
     }
   }
@@ -156,8 +161,8 @@
     width: 7.5rem;
     background-color: $bodyRed;
     position: absolute;
-    border-radius: 35px;
-    top: -2rem;
+    border-radius: 26px;
+    top: -3rem;
     right: 20rem;
     padding: 1rem;
     display: flex;
@@ -168,7 +173,7 @@
     p {
       color: $white;
       font-family: $body-font-family;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
     }
 
     img {
@@ -196,10 +201,17 @@
       align-self: center;
       border: none;
       padding: 0.5rem;
-      background-color: #ff8372;
+      margin-top: -7rem;
+      margin-right: -11rem;
+     background-color: $headerTertiary;
       border-radius: 5px;
       color: $text-white;
       cursor: pointer;
+              &:hover {
+          cursor: pointer;
+          background-color: $lighterMainGreen;
+          border: 1px solid $headerTertiary;
+        }
     }
   }
 }

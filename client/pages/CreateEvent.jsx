@@ -91,13 +91,13 @@ const Event = () => {
             </a>
           </div>
           <div className={styles.copyLinkContainer}>
-            <p>Copy and Paste this link to send it to your friends</p>
+            <p>Copy this link to send to your friends</p>
             <img
               src='/server/public/assets/Secret-Santa-.png'
               alt='santa hushing'
               className={styles.santaCopyLinkImg}
             />
-            <button onClick={copyLink}>Copy Link</button>
+            <button onClick={copyLink}>Copy link</button>
           </div>
           <img
             src='/server/public/assets/rudolph-v2.png'
