@@ -1,0 +1,364 @@
+@import '../styles/theme';
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: $white;
+  padding: 5rem;
+
+  width: 80rem;
+  margin: 0 auto;
+
+  position: relative;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: $shadow;
+  min-height: 50rem;
+
+  .header {
+    color: $bodyRed;
+    font-family: $heading-font-family;
+    font-size: 5.2rem;
+    font-weight: 900;
+    padding: 1rem 6rem;
+    text-align: center;
+    text-shadow: $shadow;
+    width: 100%;
+
+    border-bottom: 8px solid $bodyGold;
+    margin: 0 auto;
+
+    position: relative;
+    width: fit-content;
+  }
+
+  .createEventContainer {
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1rem;
+    width: fit-content;
+
+    position: relative;
+    height: 25em;
+    width: 40rem;
+
+    .secondaryHeading {
+      color: $black;
+      font-family: $heading-font-family;
+      font-size: 3.2rem;
+      font-weight: 900;
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    p {
+      color: $headerTertiary;
+      font-family: $body-font-family;
+      font-size: 2rem;
+      font-weight: 400;
+      text-align: center;
+      width: 100%;
+      margin: 2rem auto;
+    }
+
+    .eventForm {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 100%;
+      gap: 2rem;
+      position: relative;
+      width: 40rem;
+
+      textarea {
+        width: 100%;
+        resize: none;
+        height: 15rem;
+        border-radius: 25px;
+        background-color: $headerTertiary;
+        color: $text-white;
+        font-family: $body-font-family;
+        font-size: 2rem;
+        padding: 3rem 1rem;
+        border: none;
+        &::placeholder {
+          color: #f7f7f78f;
+        }
+        &:focus {
+          outline: 4px solid $bodyGold;
+        }
+      }
+
+      button {
+        width: 15rem;
+        height: 4rem;
+        border-radius: 11px;
+        border: none;
+        background-color: $headerSecondary;
+        color: $text-white;
+        font-family: $body-font-family;
+        font-size: 2rem;
+        font-weight: 900;
+        text-align: center;
+        text-shadow: $shadow;
+        cursor: pointer;
+        margin: 0 auto;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: $bodyGold;
+        }
+      }
+    }
+
+    .wishlistItem {
+      font-size: 3.4rem;
+      font-weight: 400;
+      color: $headerPrimary;
+      margin: 0 auto;
+
+      margin-top: 2rem;
+    }
+
+    .editBtn {
+      width: 15rem;
+      height: 4rem;
+      border-radius: 11px;
+      border: none;
+      background-color: $headerSecondary;
+      color: $text-white;
+      font-family: $body-font-family;
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      text-shadow: $shadow;
+      cursor: pointer;
+      margin: 0 auto;
+      transition: all 0.2s ease-in-out;
+      margin-top: 4.8rem;
+      margin-bottom: 2rem;
+
+      &:hover {
+        background-color: $bodyGold;
+      }
+    }
+    .days {
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: $headerPrimary;
+
+      margin-top: 2rem;
+    }
+  }
+  .treeImg {
+    position: absolute;
+    bottom: -5rem;
+    left: -18rem;
+    width: auto;
+    height: 25rem;
+    z-index: 2;
+    transform: rotate(-9deg);
+  }
+
+  .catImg {
+    position: absolute;
+    bottom: -3rem;
+    left: -20rem;
+    width: 15rem;
+    height: auto;
+  }
+
+  .assignedName {
+    font-size: 3.4rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    background: $headerTertiary;
+    color: $text-white;
+    margin: 0 auto;
+
+    padding: 0.5rem 3rem;
+    border-radius: 20px;
+    position: relative;
+
+    .candyCaneImg {
+      position: absolute;
+      width: 3.8rem;
+      height: auto;
+      margin-left: 1rem;
+      transform: rotate(55deg);
+      top: -1rem;
+      right: -1rem;
+    }
+  }
+
+  .assignedWishlist {
+    background-color: $bodyRed;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: $text-white;
+    margin-top: 3.2rem;
+    text-align: left;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 50rem;
+
+    p {
+      margin: 0 auto;
+      text-align: left;
+
+      color: $text-white;
+    }
+    .treeImAssigned {
+      position: absolute;
+      bottom: 3rem;
+      right: -5rem;
+      width: auto;
+      height: 15rem;
+      transform: rotate(3deg);
+    }
+  }
+  .linkContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background-color: $bodyGold;
+    border-radius: 1rem;
+    color: $white;
+    padding: 2rem;
+    height: 4rem;
+    position: absolute;
+    bottom: 7rem;
+    right: 12rem;
+
+    p {
+      text-align: center;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: $white;
+      font-family: $body-font-family;
+    }
+    a {
+      color: $white;
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-decoration: none;
+      text-align: center;
+      font-family: $body-font-family;
+      padding: 0rem 5rem;
+
+      &:hover {
+        text-decoration: underline;
+        color: $lightBackground;
+      }
+    }
+  }
+  .copyLinkContainer {
+    height: 7.5rem;
+    width: 7.5rem;
+    background-color: $bodyRed;
+    position: relative;
+    border-radius: 15px;
+    bottom: 4.5rem;
+    right: -57rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: $shadow;
+
+    p {
+      color: $white;
+      font-family: $body-font-family;
+      font-size: 1.2rem;
+    }
+
+    img {
+      position: absolute;
+      height: 4.5rem;
+      width: 4.5rem;
+      top: 1rem;
+      right: -2.8rem;
+      animation: rotate 1s infinite;
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    button {
+      justify-self: center;
+      align-self: center;
+
+      font-size: 1.1rem;
+      padding: 0.5rem;
+
+      background-color: $headerPrimary;
+      border-radius: 5px;
+      color: $text-white;
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+        background-color: $bodyGold;
+        border: none;
+      }
+    }
+  }
+
+  h4 {
+    color: $text-black;
+    font-family: $heading-font-family;
+    font-size: 3.4rem;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: $shadow;
+  }
+
+  .eventLink {
+    color: $bodyRed;
+
+    margin: 0 auto;
+
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+    background-color: $headerSecondary;
+    border-radius: 8px;
+    color: $text-white;
+    cursor: pointer;
+    font-family: $body-font-family;
+    font-size: 1.6rem;
+    font-weight: 900;
+
+    &:hover {
+      background-color: $bodyRed;
+    }
+  }
+
+  .rudolphImg {
+    width: 5rem;
+    height: 5rem;
+    height: auto;
+    position: absolute;
+    top: 19rem;
+    left: -5rem;
+    transform: rotate(-10deg);
+  }
+}

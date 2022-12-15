@@ -1,0 +1,63 @@
+@import './_theme.scss';
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  font-family: $body-font-family;
+  color: $text-black;
+  background-color: $lightBackground;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+#root {
+}
+
+p {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: $text-black;
+  cursor: pointer;
+}
+
+@media (max-width: 84em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 44em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+@media (max-width: 34em) {
+  html {
+    font-size: 37.5%;
+  }
+}

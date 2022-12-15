@@ -1,0 +1,83 @@
+@use '../styles/_theme' as theme;
+
+.home {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+  place-content: center;
+  height: 100%;
+  max-width: 150rem;
+  padding: 1rem;
+
+  background-color: theme.$lightBackground;
+  margin-top: 0;
+  margin: 0 auto;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+}
+
+.imageWrapper {
+  width: fit-content;
+  margin: 0 1.5rem;
+}
+
+.links {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 3.6rem;
+  font-family: theme.$secondary-font-family;
+  letter-spacing: 1px;
+  color: theme.$bodyRed;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-width: 60rem;
+  margin-bottom: 2rem;
+  margin-top: 0px;
+  transition: transform 0.5s;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+.homepageButtons {
+  border: 2px solid black;
+  background-color: white;
+  color: theme.$bodyRed;
+  padding: 0.5rem 2.4rem;
+  font-size: 2.6rem;
+  cursor: pointer;
+  border-color: #020202;
+  color: #000000;
+  border-radius: 10px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: theme.$body-font-family;
+}
+
+.homepageButtons a {
+  color: theme.$bodyRed;
+  border-radius: 10px;
+  font-size: 26px;
+}
+
+.homepageButtons:hover {
+  background-color: #d08c54;
+  color: rgb(255, 255, 255);
+}
+
+.homepageButtons:hover a {
+  background-color: #d08c54;
+  color: rgb(255, 255, 255);
+}

@@ -1,0 +1,123 @@
+@use '../styles/_theme' as theme;
+
+.dashboard {
+  min-height: 60vh;
+  text-align: center;
+  font-family: theme.$body-font-family;
+
+  width: 90rem;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  h1 {
+    color: theme.$bodyRed;
+    font-size: 9.6rem;
+    margin-bottom: 0px;
+  }
+
+  hr {
+    width: 40%;
+    border: 0;
+    background-color: theme.$bodyGold;
+    height: 3px;
+  }
+
+  ul {
+    position: relative;
+  }
+
+  li {
+    list-style-type: none;
+    font-size: 1.6rem;
+    position: relative;
+    right: 20px;
+  }
+
+  h2 {
+    font-size: 4.8rem;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .link {
+    padding: 1rem 2rem;
+    background-color: theme.$bodyRed;
+    margin: 10px;
+    text-decoration: none;
+    font-family: theme.$body-font-family;
+    color: theme.$white;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: theme.$bodyGold;
+    border-style: solid;
+    font-size: 2rem;
+
+    &:hover {
+      background-color: theme.$bodyGold;
+      border-color: theme.$bodyRed;
+    }
+  }
+  button:hover {
+    color: theme.$black;
+
+    border-style: solid;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  width: 100%;
+
+  gap: 5rem;
+  margin-top: 9.6rem;
+  margin-bottom: 9.6rem;
+
+  .event {
+    background-color: white;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: theme.$shadow;
+    display: flex;
+    height: 30rem;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    display: relative;
+    padding: 2.4rem;
+
+    p {
+      font-size: 2.4rem;
+    }
+
+    .title {
+      color: theme.$bodyRed;
+    }
+
+    .statusClosed {
+      color: theme.$bodyRed;
+    }
+
+    .statusOpen {
+      color: green;
+    }
+
+    .treeImage {
+      position: relative;
+      right: 3rem;
+      bottom: -2rem;
+      rotate: calc(350deg);
+    }
+  }
+}

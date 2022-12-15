@@ -1,0 +1,51 @@
+@use '../styles/_theme' as theme;
+
+.SSHomeContainer {
+  height: 70rem;
+  width: auto;
+
+  .SSHomeWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+    width: auto;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 9.6rem;
+      font-family: theme.$body-font-family;
+
+      color: theme.$bodyRed;
+      text-decoration: none;
+
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      width: auto;
+      height: 40rem;
+
+      .image {
+        height: 100%;
+        width: auto;
+
+        transition: transform 0.5s;
+      }
+    }
+  }
+
+  .image:hover {
+    transform: scale(1.1);
+  }
+
+  .links {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 4.8rem;
+    font-family: theme.$body-font-family;
+    color: theme.$bodyRed;
+    text-align: center;
+  }
+}

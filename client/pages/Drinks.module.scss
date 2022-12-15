@@ -1,0 +1,155 @@
+@use '../styles/_theme' as theme;
+
+.drinksContainer {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: theme.$shadow;
+  display: flex;
+
+  width: 120rem;
+  height: 50rem;
+  margin: 0 auto;
+  background-color: white;
+  overflow-y: scroll;
+
+  flex-direction: row;
+
+  margin: 5rem 4rem;
+
+  justify-content: center;
+  img {
+    border-radius: 2rem;
+    width: 40rem;
+    height: 40rem;
+    padding: 1.5rem;
+  }
+}
+.instructions {
+  text-align: center;
+}
+
+.infoContainer {
+  font-family: theme.$body-font-family;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: theme.$white;
+  border-radius: 2rem;
+  overflow-y: scroll;
+  ul {
+    list-style-type: circle;
+  }
+
+  li {
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    color: theme.$bodyRed;
+    font-size: 40px !important;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 26px;
+    color: theme.$bodyRed;
+    margin: 5px;
+  }
+  hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: theme.$bodyGold;
+    height: 2px;
+  }
+  span {
+    color: theme.$text-black;
+  }
+
+  p,
+  li {
+    font-size: 20px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+}
+
+.spinner {
+  position: relative;
+  right: 25%;
+  bottom: 2rem;
+}
+
+.drunkTitle {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 9.6rem;
+  font-family: theme.$body-font-family;
+  color: theme.$bodyRed;
+  text-decoration: none;
+  margin-top: 5rem;
+}
+
+.drinksButton {
+  padding: 2rem;
+  width: 30%;
+  margin-bottom: 5rem;
+  font-size: 3rem;
+  font-family: theme.$body-font-family;
+  background-color: theme.$headerSecondary;
+  color: theme.$white;
+  text-decoration: none;
+  border-radius: 2rem;
+  border: 5px theme.$bodyGold solid;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background-color: theme.$bodyGold;
+    border: 5px theme.$headerSecondary solid;
+  }
+}
+
+.centerButton {
+  display: flex;
+  justify-content: center;
+}
+
+.catGlassContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-evenly;
+}
+
+.catGlasschild1 {
+  order: 1;
+  font-size: 16px !important;
+}
+
+.catGlasschild2 {
+  order: 2;
+  font-size: 16px !important;
+}
+
+.treeImage {
+  position: relative;
+  right: 50px;
+  bottom: 20px;
+  rotate: calc(15deg);
+}

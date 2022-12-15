@@ -1,0 +1,234 @@
+@import '../styles/theme';
+
+.inviteContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: $white;
+  padding: 10rem;
+  position: relative;
+
+  width: 80rem;
+  margin: 0 auto;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: $shadow;
+  overflow-x: hidden;
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    color: $bodyRed;
+    font-family: $heading-font-family;
+    margin: 0 auto;
+    font-size: 3.4rem;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: $shadow;
+    width: 100%;
+  }
+  p {
+    color: $headerTertiary;
+    font-family: $body-font-family;
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    margin: 1rem auto;
+    max-width: 40ch;
+    word-wrap: break-word;
+  }
+
+  .header {
+    color: $bodyRed;
+    font-family: $heading-font-family;
+    font-size: 5.2rem;
+    font-weight: 900;
+    padding: 1rem 6rem;
+    text-align: center;
+    text-shadow: $shadow;
+    width: 100%;
+
+    border-bottom: 8px solid $bodyGold;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+    position: relative;
+    width: fit-content;
+  }
+
+  .inviteForm {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    gap: 2rem;
+    width: 100%;
+    place-items: center;
+
+    margin: 0 auto;
+
+    label {
+      font-size: 1.6rem;
+      color: $headerTertiary;
+      font-family: $body-font-family;
+    }
+    input {
+      background-color: $headerTertiary;
+      border-radius: 10px;
+      color: $text-white;
+      font-size: 3rem;
+      padding: 1.5rem 3rem;
+      text-align: center;
+      height: 2.6rem;
+      width: 30rem;
+      border: none;
+      font-family: $body-font-family;
+      &::placeholder {
+        text-align: center;
+        color: #f7f7f78f;
+      }
+
+      &:focus {
+        outline: 2.5px solid $bodyGold;
+      }
+    }
+
+    button {
+      width: 25rem;
+      padding: 1.2rem 1rem;
+
+      height: 10rem;
+      border-radius: 11px;
+      border: none;
+      background-color: $headerSecondary;
+      color: $text-white;
+      font-family: $body-font-family;
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-align: center;
+      text-shadow: $shadow;
+      cursor: pointer;
+      margin: 0 auto;
+
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $bodyGold;
+      }
+    }
+  }
+  img {
+    position: absolute;
+    height: 15rem;
+    width: auto;
+    bottom: 5rem;
+    right: 5rem;
+    transform: rotate(10deg);
+  }
+}
+
+.eventLinkContainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  margin-top: 3.4rem;
+  margin-bottom: 3.4rem;
+
+  .linkContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background-color: $bodyGold;
+    margin: 0 auto;
+
+    border-radius: 1rem;
+    color: $white;
+    padding: 2rem;
+    width: 70rem;
+
+    p {
+      text-align: center;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: $white;
+      font-family: $body-font-family;
+    }
+    a {
+      color: $white;
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-decoration: none;
+      text-align: center;
+      font-family: $body-font-family;
+
+      &:hover {
+        text-decoration: underline;
+        color: $lightBackground;
+      }
+    }
+  }
+  .copyLinkContainer {
+    height: 7.5rem;
+    width: 7.5rem;
+    background-color: $bodyRed;
+    position: relative;
+    border-radius: 1rem;
+    top: -2rem;
+    right: 10rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: $shadow;
+
+    p {
+      color: $white;
+      font-family: $body-font-family;
+      font-size: 1.6rem;
+    }
+
+    img {
+      position: absolute;
+      height: 5rem;
+      width: auto;
+      top: -1.5rem;
+      right: -3rem;
+      animation: rotate 1s infinite;
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    button {
+      justify-self: center;
+      align-self: center;
+      border: none;
+      padding: 0.5rem;
+
+      background-color: $headerTertiary;
+      border-radius: 5px;
+      color: $text-white;
+      cursor: pointer;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $lighterMainGreen;
+        border: 1px solid $headerTertiary;
+      }
+    }
+  }
+}
